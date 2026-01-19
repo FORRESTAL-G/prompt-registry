@@ -1,0 +1,2 @@
+
+Cerca di fare un ragionamento esplicito spiegandoti, e ritornando sui punti che hai spiegato piú e piú volte per valutare cosa ha senso, cosí da formare una chain-of-thought stabile, dove ragioni sui punti scoperti e ritorni su di essi per metterti in discussione finché non arriviamo alla soluzione. Se concludi che bisogna fare modifiche, manda un blocco di codice con tutto il codice riscritto.
