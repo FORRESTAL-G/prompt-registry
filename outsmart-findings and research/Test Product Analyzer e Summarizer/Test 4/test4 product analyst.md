@@ -56,3 +56,5 @@ Siamo specializzati esclusivamente in AWS. Gestiamo l'intera infrastruttura per 
 ```
 Boss, per definire la USP in modo preciso, quali sono gli elementi distintivi che ti rendono la scelta obbligata rispetto ai competitor? Ad esempio, il tuo livello di specializzazione in AWS per il Fintech, l'approccio collaudato con Terraform e CI/CD pipelines, o altri fattori specifici? Quale messaggio vuoi trasmettere?
 ```
+# Verdetto
+Puó andar bene ma non mi piace che sia SALTATO direttamente alla USP
