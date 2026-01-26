@@ -242,3 +242,16 @@ Nessun output, il modello ha prodotto la parola `STOP` dopo aver eseguito il too
 ```
 
 # Verdetto: Fallimento catastrofico da parte del Product Analyzer.
+
+L'Analyzer e il "Falso Positivo": o3-mini ha visto la parola "Ok" e ha smesso di ragionare sui vincoli. Ha considerato la modifica delle assicurazioni come l'ultimo tassello del puzzle invece di una nuova proposta da validare.
+
+Il Summarizer e lo "Stato Allucinato": Il 120B ha impostato STATUS: USP confermata già all'Input 4, quando stavo ancora correggendo! Questo ha "corrotto" la memoria: l'Analyzer, leggendo nel summary che la USP era già confermata, si è sentito autorizzato a chiudere al primo "Ok" utile.
+
+Il Tool Call vuoto allo Step 2: Questo è un bug di sistema dell'agente che cerca di "pulire" i campi, ma è un segnale che non ha capito che non deve toccare quel tool fino alla fine.
+
+Dobbiamo cambiare strategia. Se i modelli sono troppo "entusiasti" di chiudere, dobbiamo obbligarli a una procedura di auto-riflessione prima di ogni output.
+
+Modifica all'Analyzer (Hard Lock 2.0)
+Sostituiamo la logica discorsiva con una Checklist di Sicurezza che deve processare mentalmente.
+
+Teniamo a mente che la USP non deve essere  necessariamente agnostica; ma il punto é che se l'utente dice che punta a vendere il proprio prodotto ad una determinata persona, se il proprio prodotto é un tool che puó aiutare ad esempio sempre con la vendita o che comunque puó essere usato per puntare a raggiungere un pubblico/ é destinato a sua volta per un utilizzo con una persona target, i due target non devono necessariamente coincidere; non sussiste la definizione di transitivitá della category theory per il target a cui l'utente punta a vendere il prodotto e per quell'eventuale target a cui il prodotto permette di ambire nel caso in cui si tratta come in questo caso di un prodotto che permette di raggiungere delle persone
