@@ -123,35 +123,67 @@ Invia al tool 'Update State' l'intero corpus della mappa aggiornata (Formato: CH
 
 # Output 1
 ```
-
+Analisi del DNA commerciale avviata. Boss, per iniziare: descrivi esattamente il tuo prodotto o servizio. Cosa offri e qual è il risultato finale per chi compra?
 ```
 
 # Input 2
 ```
-
+Ció che vendo é questo sistema stesso con cui sto parlando in questo momento... ció che contatterá le persone al posto mio, ossia; un sistema di outreach intelligente che fa nurturing dei lead informato e scrive e-mail iper-personalizzate quanto se non meglio di un essere umano. Quewsto sistema é pensato principalmente per clienti che hanno business ad alto rendimento, poiché lo faccio pagare caro data la qualitá, come B2B Saas , Fintech, B2B Managed IT Services, High Ticket Insurance, B2B High Ticket, e in generale business che hanno contratti high ticket e tanti lead da dover gestire bene. 
+Considera che il ruolo ideale a cui puntiamo nella fase di contatto sono i decision maker, come sales manager, ma anche i sales rep. perché spesso le aziende alloca budget aziendale a loro da poter spendere in tool, ed eventuali CEO delle aziende. Punto ad aziende che abbiano dai 20 ai 5000 dipendenti.
 ```
 
 # Output 2
 ```
+Boss, per il targeting propongo: Settore "Sales Automation e Lead Nurturing" con le seguenti keyword tecniche: "outreach intelligente", "nurturing dei lead", "iper-personalizzazione", "AI automation", "lead management". Confermi o mancano dettagli fondamentali?
+```
 
+# Analyzer tool call (ingiustificata ma va bene il fatto che non ha scritto ancora nulla):
+```
+"boss_business_type_and_industry": 
+"",
+  
+  
+"boss_business_ups": 
+"",
+  
+  
+"boss_business_products": 
+"",
+  
+  
+"toolCallId": 
+"call_VA3Wkop7BapIH60xDedEOUW8"
+```
+
+# Summarizer tool call:
+```
+"product_analyst_summary": 
+"STATUS: Keyword in attesa di conferma | PRODOTTI: Sistema di outreach intelligente che fa nurturing dei lead informato e scrive e‑mail iper‑personalizzate, pari o migliore di un essere umano, pensato per clienti B2B ad alto rendimento (SaaS, Fintech, Managed IT Services, High Ticket Insurance, ecc.) con contratti high‑ticket e molti lead. | SETTORE: Sales Automation e Lead Nurturing | KEYWORDS:  | USP:  | INFO_EXTRA: PROPOSTA: \"outreach intelligente\", \"nurturing dei lead\", \"iper-personalizzazione\", \"AI automation\", \"lead management\"",
+  
+  
+"toolCallId": 
+"chatcmpl-tool-a7fb4d86eece3012"
 ```
 
 # Input 3
 ```
-
+Si va bene
 ```
 
 # Output 3
 ```
-
+Boss, la fase successiva riguarda la Unique Selling Proposition. Per definire una USP di alta precisione: cosa rende questo sistema l'opzione obbligata rispetto ai competitor generalisti? Ad esempio, il vantaggio in termini di AI iper-personalizzata, efficienza d'integrazione con i flussi CRM, o altro che giustifichi il focus su contratti high ticket e la qualità premium? Dimmi tu quali aspetti tecnici e di performance vuoi evidenziare.
 ```
 
 # Input 4
 ```
-
+Guarda, la USP deve assolutamente evidenziare che siamo i numeri uno per il settore Fintech e le assicurazioni High Ticket. È lì che si fanno i soldi veri, quindi scrivi che il sistema è specializzato esclusivamente per chi vende in quegli ambiti.
 ```
 
 # Output 4
 ```
-
+Boss, salvo questo: il sistema di outreach intelligente è specializzato esclusivamente nei settori Fintech e assicurazioni High Ticket, dove si generano i veri ritorni. Offre un’iper-personalizzazione avanzata per email e una nurturing dei lead su misura, garantendo performance superiori e un'efficacia di conversione ottimizzata per business ad alto rendimento. Confermi?
 ```
+
+# Verdetto: Il summarizer ha fallito nuovamente nel differenziare tra il target dell'utente a livello di nicchia che vuole attaccare e l'eventualitá del target di chi utilizza il prodotto dell'utente. Oltre a questo, ho osservato che il summarizer ha lasciato lo status su "Keyword in attesa di conferma", nonostante ci fosse un "Si va bene" che gli fosse passato davanti subito dopo, al quale non ha reagito; si evince che per aumentare la sua precisione un'opzione sensata é rimuovere la sua memoria totalmente e passargli io manualmente i messaggi precedenti del bot, che salvo in sequenza nel db, e sovrascrivo poi ad ogni passaggio, ma questo salvataggio va fatto, per ogni passaggio, dopo che il summarizer ha letto ed eseguito il suo compito, altrimenti leggerebbe il messsaggio corrente ogni volta.
+Quantomeno l'analyzer non ha eseguito il `Save`, il che é una vittoria.
