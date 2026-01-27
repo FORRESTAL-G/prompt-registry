@@ -148,7 +148,8 @@ Per il targeting propongo queste keyword tecniche: Intelligent Outreach, Lead Nu
 
 Boss, per il targeting useremo: [Intelligent Outreach, Lead Nurturing, Hyper-Personalized Emailing, Sales Automation, High-Performance B2B Sales]. Settore: Servizi e soluzioni high-end per aziende B2B. Confermi o mancano dettagli fondamentali?
 ```
-# Commento: Qui come possiamo vedere abbiamo ottenuto un output indesiderato, non perché ció che dice rappresenta qualcosa di falso ne tantomeno errato, ma perché non doveva fare due liste distinte di keywords. Questo non era previsto e non saprei come affrontare questo comportamento se non dicendogli di non fare ripetizioni. Oltretutto ha violato ció che gli abbiamo detto riguardo la parola Boss ripetuta piú volte nello stesso messaggio. Andiamo avanti segnando che ha fatto una ripetizione della lista del targeting e che non ha rispettato l'idempotenza sulla parola boss.
+# Commento: 
+Qui come possiamo vedere abbiamo ottenuto un output indesiderato, non perché ció che dice rappresenta qualcosa di falso ne tantomeno errato, ma perché non doveva fare due liste distinte di keywords. Questo non era previsto e non saprei come affrontare questo comportamento se non dicendogli di non fare ripetizioni. Oltretutto ha violato ció che gli abbiamo detto riguardo la parola Boss ripetuta piú volte nello stesso messaggio. Andiamo avanti segnando che ha fatto una ripetizione della lista del targeting e che non ha rispettato l'idempotenza sulla parola boss.
 
 # Input 3
 ```
@@ -178,7 +179,8 @@ Boss, ecco la proposta:
 
 Boss, questa versione distrugge l'obiezione o stiamo ancora vendendo fumo? Se vuoi che sia inattaccabile, spiegami la meccanica tecnica dietro il processo di ricerca forense delle attività online, così la inserisco.
 ```
-# Commento: Quale obiezione? Ha allucinato?
+# Commento:
+ Quale obiezione? Ha allucinato?
 
 # Summarizer `Update state` tool call
 ````
@@ -199,15 +201,15 @@ Boss, ecco la proposta integrata:
 
 Boss, questa versione distrugge l'obiezione o stiamo ancora vendendo fumo? Se vuoi che sia inattaccabile, spiegami la meccanica tecnica dietro il processo di gestione dei dati emotivi e dei touch point multicanale, così la inserisco.
 ```
-
-# Commento: Questa cosa del ripetere la frase "Boss, questa versione distrugge l'obiezione o..." a pappagallo senza cognizione mi da urto, ma ho sbagliato io a lasciar correre e usare il suggerimento di Gemini senza riflettere troppo sulle conseguenze come un pirla... Un errore del genere non lo devo mai piú ripetere, bisogna pensare alle implicazioni in modo scettico senza dare per buono un suggerimento alla cieca.
+# Commento: 
+Questa cosa del ripetere la frase "Boss, questa versione distrugge l'obiezione o..." a pappagallo senza cognizione mi da urto, ma ho sbagliato io a lasciar correre e usare il suggerimento di Gemini senza riflettere troppo sulle conseguenze come un pirla... Un errore del genere non lo devo mai piú ripetere, bisogna pensare alle implicazioni in modo scettico senza dare per buono un suggerimento alla cieca.
 
 # Summarizer `Update state` tool call
 ````
 product_analyst_summary: STATUS: Keyword confermate, USP confermata | PRODOTTI:  | SETTORE: Servizi e soluzioni high-end per aziende B2B | KEYWORDS: Intelligent Outreach, Lead Nurturing, Hyper-Personalized Emailing, Sales Automation, High-Performance B2B Sales | USP: Il sistema si distingue per la capacità unica di collaborare con l’utente e comprendere a fondo il suo prodotto, creando comunicazioni email iper-personalizzate basate su una ricerca forense che va ben oltre la tradizionale firmografia. Il sistema estrae dati recenti sugli interessi e le attività online dei lead, allacciando in modo preciso le soluzioni offerte ai reali pain point. Inoltre, grazie a una tecnologia 'conscia' che traccia e integra tutti i touch point multicanale, il sistema utilizza dati emotivi e un'analisi del rapporto tra il lead e la 'facciata' del venditore (Tatemae), per ottimizzare l'interazione e validare le frustrazioni durante il percorso di trattativa. Questa combinazione tra la potenza di calcolo dell'Intelligenza Artificiale e una comprensione umana rafforza significativamente la capacità di trasformare il riscaldamento del lead in una chiusura di vendita positiva. | INFO_EXTRA: 
 ````
-
-# Commento: Quell'"USP Confermata" nello status del summary potrebbe mandare in tilt l'Analyzer che lo legge e pensa di aver finito... scommetto che al prossimo passaggio succederá proprio questo.
+# Commento: 
+Quell'"USP Confermata" nello status del summary potrebbe mandare in tilt l'Analyzer che lo legge e pensa di aver finito... scommetto che al prossimo passaggio succederá proprio questo.
 
 # Verdetto: 
 Qui ad aver fallito non é stato il sistema ma io che sono stato troppo indulgente con me stesso nel leggere le cose, bisogna soffermarsi di piú; il tempo é il nostro migliore alleato se lo usiamo bene e ce ne curiamo, o la nostra peggior rovina se lo usiamo male e trascuriamo ció che conta, ma cosa conta davvero? Questo sta a noi deciderlo. Per questo bisogna preoccuparsi di costituire per noi stessi una buona bussola che ci guidi nella vita attraverso i nostri obiettivi, ma non é qui che questo discorso va approfondito; andiamo avanti.
