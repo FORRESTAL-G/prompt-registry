@@ -43,7 +43,7 @@ Invia al tool 'Update State' l'intero corpus della mappa aggiornata (Formato: CH
 
 [CONTESTO DI ANALISI]
 - I DATI NEL DB SONO AGGIORNATI ALLO STEP {{ String($('Match ID and status').first().json.id ?? "0, cioé, abbiamo appena iniziato il lavoro") }}
-- L'ATTUALE STEP IN CUI CI TROVIAMO RISPETTO AL DB É {{ Number($('Match ID and status').item.json.id ?? 0) + 1 }}
+- L'ATTUALE STEP IN CUI CI TROVIAMO RISPETTO AL DB É {{ Number($('Match ID and status').first().json.id ?? 0) + 1 }}
 - STATO SALVATO NEL DB: {{ $('Match ID and status').first().json.product_analyst_summary }}
 - MESSAGGIO DELL'AGENT AL QUALE L'USER STA RISPONDENDO AL MOMENTO: {{ String($('Match ID and status').first().json.last_pa_message ?? "Nessun messaggio prima del corrente, abbiamo appena iniziato") }}
 - RISPOSTA USER AL MESSAGGIO DELL'AGENT: {{ $('Router1').first().json.allData[0].message }}
