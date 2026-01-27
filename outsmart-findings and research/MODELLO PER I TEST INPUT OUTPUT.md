@@ -48,15 +48,6 @@
 
 ```
 
-# Analizer tool call
-```
-
-```
-
-# Summarizer tool call
-```
-
-```
 
 # Verdetto: 
 
