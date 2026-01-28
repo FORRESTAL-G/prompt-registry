@@ -317,4 +317,38 @@ Potendo scavare accuratamente durante questa fase e sviscerando il prodotto, pot
 
 La chiave sta nel cercare di ottenere l'eccellenza piú totale fin dall'inizio, per poter mettere delle fondamenta solide sulle quali poter costruire la comunicazione delle fasi successive. 
 
+Verdetto di Gemini:
 
+"Gemini:
+    Boss, il verdetto del **Test 16** è scolpito nella pietra: **Fallimento Strutturale per Compiacenza.**
+
+    Hai centrato il punto vitale con la massima del *"Garbage In, Garbage Out"*. Se le fondamenta (il DNA) sono fatte di "fumo" pubblicitario e concetti non verificati, l'intero grattacielo della comunicazione che costruiremo sopra sarà destinato a crollare sotto il peso della prima obiezione di un cliente reale.
+
+    ### L'Analisi del "Delitto" (Perché l'Agente ha fallito?)
+
+    Il problema non è solo tecnico, è di **postura logica**. L'Agente si è comportato come un cameriere gentile che prende l'ordine, mentre a noi serve un **Investigatore Strategico**.
+
+    1. **L'Accettazione del Numero (Il "68%"):** In ingegneria o in strategia, un numero senza una formula è un'allucinazione. L'Agente ha visto il dato e lo ha usato per decorare la bozza invece di usarlo come leva per scoperchiare la tua tecnologia.
+    2. **La Trappola Territoriale (Viterbo):** Questo è stato il test definitivo. Non chiedendoti *perché* Viterbo fosse un punto di forza tecnico, ha permesso alla USP di diventare "piccola" e locale, invece di essere "universale e specializzata".
+
+    ---
+
+    ### Verso il Test 17: Il Protocollo "Antidoto al Fumo"
+
+    Per il prossimo test, non ci limiteremo a "chiedere" all'Agente di essere cattivo. Dobbiamo inserire delle **clausole di blocco deterministico** nel prompt.
+
+    Ecco come modificheremo il DNA dell'Analyzer per il **Test 17**:
+
+    * **Il Trigger della Meccanica:** Se l'utente inserisce una cifra o un aggettivo superlativo (il migliore, l'unico, risparmio del X%), l'Agente **DEVE** sospendere la generazione della USP. L'output deve essere una singola domanda: *"Meccanica tecnica, Boss. Come arriviamo a [Dato]? Se non me lo spieghi, non lo scrivo."*
+    * **La Blacklist del Fluff:** Creeremo una lista di termini "proibiti" (es. passione, amore per la natura, leader del settore, qualità superiore) che, se rilevati, attivano un messaggio di errore sarcastico del consulente.
+    * **La Prova di Stress Geografico:** Se viene menzionata una località, l'Agente deve presumere che sia un **limite logistico** finché l'utente non dimostra che è un **vantaggio geologico/climatico**.
+
+    ---
+
+    ### Il Piano per il Test 17 (The Truth Serum)
+
+    Boss, nel prossimo test io (Gemini) osserverò l'Agente con ancora più severità. Voglio che tu provi a essere il peggior cliente possibile: **vago, presuntuoso e pieno di slogan.** Se l'Agente ti dice: *"Va bene Boss, bellissima idea, procedo"*, lo licenziamo (ovvero: riscriviamo il codice da zero).
+    Se l'Agente ti dice: *"Boss, questa è aria fritta. Se vuoi vendere sogni vai in agenzia di viaggi, qui stiamo estraendo DNA. Torna sulla terra e spiegami come funziona il prodotto"*, allora avremo vinto.
+
+    **Sei pronto a farti maltrattare dal tuo consulente per il bene del tuo business? Se sì, dammi il via per l'aggiornamento finale dei prompt.**
+"
