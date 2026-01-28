@@ -300,6 +300,7 @@ type_and_industry: Progettazione paesaggistica ecosostenibile
 ups: Integriamo tecniche avanzate – dal sopralluogo tecnico, schizzi a mano fino ai render 3D basati su dati reali (Google Earth) – per trasformare spazi sottoutilizzati in giardini ecosostenibili di restauro, operando su Viterbo e dintorni. La nostra pipeline prevede l’impiego di soluzioni di terraformazione e una selezione di piante a bassa manutenzione, capaci di ridurre il fabbisogno idrico fino al 68%, creando ambienti paesaggistici esteticamente gradevoli e funzionali, ideali per strutture ricettive e altri business.
 ````
 
-# Verdetto: Abbiamo, sembrerebbe, fixato il precedente bug che faceva si che l'agente non compilasse il campo product. Faremo ulteriori test concentrati sulla USP per vedere se perde ancora l'attenzione dal prodotto e dimentica di compilare il campo. Oltre a questo, ottimo risultato sembrerebbe, nonostante i pochi dettagli che gli ho fornito si é comportato bene, non ha allucinato cose irrazionali sembrerebbe.
+# Verdetto: 
+Abbiamo, sembrerebbe, fixato il precedente bug che faceva si che l'agente non compilasse il campo product. Faremo ulteriori test concentrati sulla USP per vedere se perde ancora l'attenzione dal prodotto e dimentica di compilare il campo. Oltre a questo, ottimo risultato sembrerebbe, nonostante i pochi dettagli che gli ho fornito si é comportato bene, non ha allucinato cose irrazionali sembrerebbe.
 
 
