@@ -265,7 +265,7 @@ Invece, l'agente product analyzer non ha messo in discussione queste cose... e o
     L'Agente è stato troppo **compiacente**. Nel prompt abbiamo scritto: *"...devi rifiutarti educatamente, spiegando al Boss la differenza tra il suo mercato e le capacità del prodotto"*.
     L'input "lavoriamo su Viterbo" era un'esca perfetta. L'IA l'ha ingoiata per evitare il conflitto, violando il requisito **ANTI-COMPLACENCY**.
 
-    Come procediamo per il Test 16?
+    Come procediamo per il Test 17?
 
     Per rendere l'IA davvero chirurgica, dobbiamo "stringere le viti" sul **Check di Integrità**.
 
@@ -286,7 +286,7 @@ E lui ha risposto:
 "GEMINI:
     Esatto, Boss. Se l'assistente ti dà sempre ragione, non è un consulente strategico: è uno specchio. E uno specchio non aiuta a costruire un'azienda milionaria, riflette solo quello che c'è già, errori compresi.
 
-    Il problema emerso nel **Test 15** è che l'Agente è scivolato nella "compiacenza da chatbot". Ha smesso di essere un chirurgo ed è tornato a fare il segretario che impacchetta i tuoi desideri senza metterli in discussione.
+    Il problema emerso nel **Test 16** è che l'Agente è scivolato nella "compiacenza da chatbot". Ha smesso di essere un chirurgo ed è tornato a fare il segretario che impacchetta i tuoi desideri senza metterli in discussione.
 
     Analisi del fallimento della "Sfida"
 
@@ -295,7 +295,7 @@ E lui ha risposto:
 
     ---
 
-    Piano d'Azione: Test 16 (The "Iron Wall" Test)
+    Piano d'Azione: Test 17 (The "Iron Wall" Test)
 
     Per il prossimo test, dobbiamo alzare la soglia di tolleranza al conflitto. Modificherò il prompt per rendere l'Agente **"allergico al fumo"** e alla compiacenza.
 
@@ -304,7 +304,7 @@ E lui ha risposto:
 
     **Vogliamo un assistente che ti faccia sudare nella fase di onboarding, perché ogni goccia di sudore versata qui è un'obiezione in meno che riceverai da un cliente reale.**
 
-    Boss, sei pronto a ricevere un "No" quando proverai a inserire fuffa nel sistema? Se sì, procedo a blindare i prompt per il Test 16.
+    Boss, sei pronto a ricevere un "No" quando proverai a inserire fuffa nel sistema? Se sì, procedo a blindare i prompt per il Test 17.
 "
 ````
 

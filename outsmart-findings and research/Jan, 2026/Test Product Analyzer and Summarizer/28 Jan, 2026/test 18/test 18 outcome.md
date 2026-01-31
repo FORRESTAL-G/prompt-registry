@@ -230,7 +230,8 @@ product_analyst_summary: STATUS: Keyword confermata, in attesa di USP | PRODOTTI
 ````
 # Commento
 Ricordiamoci che il Summarizer non ha ancora letto il messaggio dell'output 5, lui legge quello al turno successivo perché per come ho impostato il tutto lui lagga di un messaggio, questo é l'unico modo che abbiamo per far scorrere bene la chat senza confonderlo.
-
+## Commento del commento
+Questo non é piú valido, il sistema legge i messaggi correnti adesso, ed anche quello precedente per poter avere un contesto chiaro
 # Input 5
 ````
 Riguardo il tweet negativo, beh, possiamo dire che si tratta di inferire l'emozione che l'utente ha provato in quel momento, per farla breve; utilizziamo un meccanismo che mette in discussione due entitá, ognuna delle due ipotizza qualcosa riguardo l'analisi di ció che stiamo vedendo online, che sia un tweet, un articolo o quant'altro, ed i due cercano di dibattere razionalmente ció che viene detto finché non arrivano a una conclusione. Raggiunta la conclusione, un terzo "scettico" li mette in discussione, cercando sempre di attaccare il nocciolo della questione ossia: cosa é stato detto di importante e che tipo di bias ed emozioni trasparono dalla comunicazione. Come devono essersi sentiti gli oggetti coinvolti (lo scrittore del contenuto letto, il soggetto-protagonista, gli altri eventuali presenti), e che cosa puó essere usato come leva, in base ai dati che abbiamo a disposizione sul prodotto dell'utente, per fare si che il contatto verso il suo suddetto lead sia efficace sfruttando i dati raccolti come leve?
