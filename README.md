@@ -1,1 +1,1 @@
-# prompt-registry
+# prompts-and-data-registry 
