@@ -166,4 +166,5 @@ Il problema di questo test era la scarsa lungimiranza dell'agente, difatti ha ch
 # Test 20
 
     - É stato osservato che facendo passare diverse ore tra un messaggio e l'altro, la memoria semplice di n8n, che si basa sulla ram del sistema ospitante l'istanza di n8n in uso, viene svuotata, quindi si perde il filo della conversazione
-      - La soluzione é usare un sistema piú avanzato per la memoria della chat
+      - La soluzione é usare un sistema piú avanzato per la memoria della chat. Ho deciso di usare come memoria Postgre gestito da Supabase
+        
