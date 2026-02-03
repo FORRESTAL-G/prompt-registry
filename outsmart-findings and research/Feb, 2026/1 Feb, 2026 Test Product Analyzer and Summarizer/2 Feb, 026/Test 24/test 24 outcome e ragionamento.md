@@ -858,6 +858,83 @@ Ho voluto incollare la parte incriminante, cosí come si trova nello stato attua
 
 
 # Verdetto
-Nemmeno questa volta ha funzionato come desiderato perché risultava non ci fossero URL nel DB di altri flussi da chiamare.
+Nemmeno questa volta ha funzionato come desiderato perché risultava non ci fossero URL nel DB da chiamare ogni volta che veniva fatta la lettura, poiché tutte le esecuzioni sono partite a distanza di pochi millisecondi una dall'altra, quindi in ogni run il db risultava ancora vuoto.
+
+Visto che non posso riconoscere il numero del frammento a priori poiché Telegrma non comunica quando ha fatto un troncamento dell'input devo sbrigarmela in un altro modo; Gemini suggerisce di aggiungere un piccolo delay con math random all'inizio del flusso, oltre al nodo wait che ha scopo diverso, per poter aggiungere del tempo in piú ad ogni esecuzione, ma questo non aiuta se il math random di uno supera quello di un altro frammento che invece é arrivato dopo, rischiando di appunto rompere l'ordine cronologico dei frammenti di testo. Stavo riflettendo che peró potrei usare una proprietá temporale come l'unix time del messaggio * un valore n fisso, per fare si che di base unix time mi funga da indice universale, cosí che a prescindere avró modo di aggiungere un filo di delay in piú tra un messaggio che arriva prima e quello che arriva dopo... peró questo rischia di allungare eccessivamente con il trascorrere del tempo questo nostro delay... forse a questo punto avrebbe senso usare sempre un valore temporale ma che potrebbe essere quello dell'unix di ora rispetto alla mezzanotte del giorno corrente, cosí é un discorso che ogni giorno si resetta... dovesse un utente scrivere sullo spacco della mezzanotte un messaggio lunghissimo sará solo sfortunato a questo punto, oppure potremmo anche prevedere un meccanismo per fare si che se scrivono proprio poco prima della mezzanotte il delay si allunghi e overflowi nel giorno dopo, cosí almeno i delay dei frammenti successivi non saranno inviati prima di quello inviato prima della mezzanotte per errore.
+
+Gemini mi fa riflettere che sarebbe meglio usare il message_id visto che é un valore incrementale, ma anche quello nel tempo aumenta, e dopo un pó di messi di utilizzo del sistema, stavo pensando che il rischio é che si arrivi ad un numero di delay enorme, perció servirebbe comunque una qualche formula che normalizzi il valore e lo tenga entro un certo limite, per poter da una parte avere sufficiente tempo di delay aggiunto tra i messaggi, e da un'altra permetterci di non esagerare con questo valore di delay col proseguire del tempo e l'invio di tanti altri messaggi... perché non fare un calcolo basato sul valore degli ultimi 2 decimali? E se ce n'é solo uno usiamo solo uno; basterá scrivere una formula che permetta di fare ultime_due_cifre_decimali_di_message_id % 100 * 300, e cosí avremo una quantitá di millisecondi che rimarrá sempre controllata, ma cambierá incrementalmente da un frammento all'altro. Aspetta peró, questo é troppo semplicistico, serve una formula piú complessa, perché che succede se la sequenza di frammenti parte da un id che finisce con 99? Si dará tanto delay a questo, e molto meno a quello successivo che risulterá 0 ogni 100 messaggi... e questo vorrebbe dire che ogni 100 messaggi rischiamo che le catene si rompano. Serve una soluzione definitiva--una formula matematica che permetta di poter gestire un caso del genere...
+
+# GEMINI: 
+
+Hai centrato in pieno il punto critico: in un sistema asincrono, la Race Condition (corsa critica) è il nemico numero uno. Con 40ms di scarto, n8n non ha fisicamente il tempo di scrivere nel DB e rendere quel dato disponibile per la lettura della seconda esecuzione. È come se tre alchimisti cercassero di scrivere sulla stessa pergamena nello stesso istante: nessuno vede cosa sta scrivendo l'altro.
+
+## Il Problema della Formula Matematica (Modulo)
+
+Hai ragione sul rischio del "salto" (es. da 99 a 00). Se usiamo un modulo piccolo, il rischio che una sequenza di messaggi venga "spezzata" a metà è alto, invertendo l'ordine di esecuzione.
+
+Tuttavia, esiste una soluzione che sfrutta la struttura del tuo Alchemical Array per creare stabilità senza tempi di attesa infiniti.
+
+---
+
+## Soluzione A: La Formula "Safe-Stagger" (Il Ritardo Incrementale)
+
+Per evitare che il modulo  rompa tutto, dobbiamo assicurarci che anche il messaggio "00" (che partirebbe con 0 ritardo) trovi comunque il database già popolato o "prenotato".
+
+La formula definitiva che ti suggerisco di inserire in un nodo Wait (all'inizio di tutto, subito dopo il Webhook) è:
+
+`{{ ($json.body.message.message_id % 100) * 500 }}`
+
+Perché questa formula funziona?
+
+* Staggering: Ogni messaggio consecutivo avrà 500ms di ritardo in più rispetto al precedente.
+* Protezione dal Rollover: Anche se passi da un `message_id` che finisce con `...99` a uno che finisce con `...00`, il messaggio `00` avrà 0ms di ritardo, mentre il `99` ne avrà quasi 50 secondi ().
+* Risultato: Il frammento successivo (`00`) finirà la sua esecuzione molto prima che il frammento precedente (`99`) inizi a leggere il DB. "The Weaver" vedrà comunque che manca un pezzo o gestirà la sequenza in modo pulito perché le esecuzioni saranno distanziate da "ere geologiche" informatiche.
+
+---
+
+## Soluzione B: Il "Collector Pattern" (L'Array Alchemico Definitivo)
+
+Se vuoi una soluzione definitiva che non dipenda da formule matematiche fragili, devi cambiare approccio: non far sì che i frammenti si "chiamino" tra loro, ma che si "radunino" in un unico cerchio.
+
+1. Write: Ogni frammento che arriva scrive se stesso in una tabella temporanea (`Pending_Fragments`) con `chatID`, `message_id` e `text`.
+2. Wait Statico: Tutte le esecuzioni si fermano in un nodo Wait per 2 secondi (tempo sufficiente perché Telegram invii tutti i pezzi).
+3. Election (Il Capogruppo): Dopo i 2 secondi, ogni esecuzione interroga il DB: *"Qual è il message_id più alto per questo chatID?"*.
+4. Verdetto:
+* Se l'esecuzione corrente HA il `message_id` più alto: Recupera tutti i frammenti dal DB, li ordina per ID, li unisce e manda tutto all'Assistant. Poi pulisce la tabella.
+* Se l'esecuzione corrente NON HA il `message_id` più alto: Si chiude immediatamente (suicidio silenzioso).
 
 
+
+> Nota Alchemica: In questo modo, non importa quanti frammenti arrivino o quanto siano vicini; solo l'ultimo arrivato (il più "giovane") avrà l'onore di completare la trasmutazione.
+
+---
+
+## Quale strada preferisci?
+
+La Soluzione A è un "cerotto" veloce che corregge il tuo workflow attuale aggiungendo il nodo Wait all'inizio con la formula del modulo. La Soluzione B richiede di riscrivere la logica di "The Weaver", ma è tecnicamente indistruttibile.
+
+Se vuoi provare la Soluzione A, incolla la formula nel parametro "Wait Time" e dimmi se la "tripletta" finalmente si unifica.
+
+Vorresti che ti aiutassi a scrivere la query per la Soluzione B (l'elezione del capogruppo) o preferisci testare prima il ritardo incrementale?
+
+# IO:
+La soluzione A funziona ma implica un aumento che nel tempo diventa assurdo:
+
+Il message id 1 avrá solo 500 millisecondo, il 10 ne avrá di piú, il 1000 ne avrá molti di piú, e cosí via a salire indefinitamente quindi nn é una soluzione, dobbiamo necessariamente quindi andare per l'opzione B 
+
+# IN DEFINITIVA
+La nuova logica é:
+- Arriva un messaggio
+- Lo scriviamo in temporary_fragments insieme a chatID e message_id
+- Aspettiamo un istante
+- Leggiamo tutti i temporary_fragments associati a quel chatID
+(Devo modificare il codice del nodo The Weaver perché la logica del flusso é da cambiare totalmente)
+- Se il message id corrente é il piú alto tra tutti quelli nella tabella temporary_fragments proseguiamo
+    Il message id corrente lo prendiamo tramite $('Webhook').first().json.body.message.message_id, quelli presenti in db li prendiamo dal nodo getFragments, che outputterá uno o piú oggetti nel campo message_fragment, e dovremo prenderlo se é uno o prenderli tutti se sono tanti, e vedre chi tra loro ha il valore di message_id piú alto, e confrontarlo con il valore preso da message_id dal nodo webhook per vedere se quindi si tratta della corrente esecuzione
+  - Se non lo é ci fermiamo
+- Uniamo in ordine di message_id i temporary fragments recuperati
+- Prendiamo l'attuale oggetto message da telegram come facevamo in precedenza nel nodo Message Obj, lo manipoliamo per sostituire al suo interno il valore del campo text con il valore costruito dai frammenti uniti
+- Eliminiamo il vecchio nodo Message Obj poiché obsoleto
+- Peschiamo l'oggetto message manipolato e lo mandiamo avanti nel flusso 
+- Modifichiamo il nodo Telegram Trigger per pescare i dati che giá pesca, invece che dal nodo ormai rimosso "Message Obj", dal nodo The Weaver modificato
+- Cancelliamo tutti i record da temporary_fragments associati al chatID attuale
