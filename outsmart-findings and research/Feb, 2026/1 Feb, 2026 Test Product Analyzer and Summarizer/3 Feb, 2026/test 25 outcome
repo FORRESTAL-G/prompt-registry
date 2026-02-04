@@ -245,3 +245,5 @@ ups: Sostituiamo il prospecting manuale con un'infrastruttura di orchestrazione 
 
 # Verdetto
 Completata l'implementazione nell'ecosistema Outsmart dei due sistemo The Weaver (Gestione asincrona della concorrenza di messaggi frammentati, utile quando si inviano oltre 4096 caratteri di input e Telegram splitta il messaggio) e The Splitter (Gestione dell'output in item-blocchi in un array JSON, di modo tale da poter inviare output lunghi splittati in massimo 3690 caratteri--entro il limite dei 4096)
+
+Sostituiti tutti i vecchi nodi di memoria semplice degli Ai Agent del flusso Assistant nell'ecosistema Outsmart con nuovi nodi MongoDB per una gestione memoriale piú sofisticata e persistente. Almeno durante lo sviluppo terró questo per ora, ma in poroduzione dovró valutare se sostituirlo con qualcosa di piú performante come Motorhead
