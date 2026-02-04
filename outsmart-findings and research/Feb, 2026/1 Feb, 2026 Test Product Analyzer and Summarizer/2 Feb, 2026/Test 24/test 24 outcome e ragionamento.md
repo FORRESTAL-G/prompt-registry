@@ -937,4 +937,5 @@ La nuova logica é:
 - Eliminiamo il vecchio nodo Message Obj poiché obsoleto
 - Peschiamo l'oggetto message manipolato e lo mandiamo avanti nel flusso 
 - Modifichiamo il nodo Telegram Trigger per pescare i dati che giá pesca, invece che dal nodo ormai rimosso "Message Obj", dal nodo The Weaver modificato
+    - Ora ho bisogno di scrivere un'espressione nel nodo Telegram Trigger nel campo JSON, per fare si che; se il nodo The Weaver é stato eseguito, prendiamo il suo bufferText, prendiamo tutto  ció che arriva dentro il campo body dal nodo Webhook, e sostituiiamo al campo body.message.text il contenuto di buffertext per poi passare in output tutto l'oggetto json che arriva da dentre body, compreso update_id accessibile con body.message_id e l'oggetto message accessibile con body.message. Altrimenti, se The Weaver non é stato eseguito, passiamo update id e message cosí come sono senza manipolazione del campo text ottenendo il contenuto dal nodo the weaver
 - Cancelliamo tutti i record da temporary_fragments associati al chatID attuale
