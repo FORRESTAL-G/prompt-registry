@@ -395,8 +395,11 @@ function closeTags(html) {
 # IO:
 
     Allora a questo punto potrei:
-    1. Cercare di risolvere gli errori programmaticamente, ma ho paura che questo possa in qualche modo possa creare conflitto con le tag pre esistenti... sicuro che questa funzione sia sufficientemente solida da poter svolgere un compito cosí importante? Perché piú che altro mi chiedo una cosa, e cioé come fa la funzione a sapere dove andrebbe davvero chiusa una tag? Certo in molti casi é logico che alcune tag non si debbano incrociare tra loro e quindi non bisogna aprirne una dentro ad un altra giá aperta ancora da dover chiudere, ma é altrettanto vero che una tag potrebbe essere necessario chiuderla molto prima di quanto pensiamo. Mi viene in mente che forse potrebbe aiutare l'imporre in primis di non usare alcune di quelle tag, per evitare formattazione troppo 'fancy', che tanto fondamentalmente non ci serve, e poi in secondo luogo; visto che gli agenti li vorrei mettere dopo che sorgono gli errori, e non prima, cosí da non avere troppi problemi di token sprecati, vorrei che o vari item dell'array venissero analizzati ed eventualmente gestiti uno alla volta, cosí intanto ció che é stato giá verificato lo inviamo 
 
+    1. Cercare di risolvere gli errori programmaticamente, ma ho paura che questo possa in qualche modo creare conflitto con le tag pre esistenti... sicuro che questa funzione sia sufficientemente solida da poter svolgere un compito cosí importante? Perché piú che altro mi chiedo una cosa, e cioé come fa la funzione a sapere dove andrebbe davvero chiusa una tag? Certo in molti casi é logico che alcune tag non si debbano incrociare tra loro e quindi non bisogna aprirne una dentro ad un altra giá aperta ancora da dover chiudere, ma é altrettanto vero che una tag potrebbe essere necessario chiuderla molto prima di quanto pensiamo. 
+    2. Mi viene in mente che forse potrebbe aiutare l'imporre in primis di non usare alcune di quelle tag, per evitare formattazione troppo 'fancy', che tanto fondamentalmente non ci serve, e poi in secondo luogo; visto che gli agenti li vorrei mettere dopo che sorgono gli errori, e non prima, cosí da non avere troppi problemi di token sprecati, 
+    3. vorrei che vari item dell'array venissero analizzati ed eventualmente gestiti uno alla volta, cosí intanto ció che é stato giá verificato lo inviamo
+   
 # Verdetto: 
 
 
