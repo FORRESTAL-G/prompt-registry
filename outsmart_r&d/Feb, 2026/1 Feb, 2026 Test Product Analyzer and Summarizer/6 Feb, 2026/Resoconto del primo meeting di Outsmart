@@ -1,0 +1,45 @@
+# Totem Guida
+## Definizione del Totem
+    - Il totem guida il sistema nella giusta strategia da utilizzare, educando le interazioni verso gli obiettivi preposti dall'utente dentro ad esso, per poter vendere secondo le disposizioni indicate in esso.
+    - É utilizzato per calcificare l'obiettivo e ricordarlo costantemente agli agenti, mantenendo la coerenza di interazione in interazione
+    - Si integra con l'Atlas Memoriale in quanto guida gli agenti verso il tipo di interazione desiderata di volta in volta, che viene poi salvata come memoria nell'Atlas, chiudendo il cerchio tra cosa si desidera fare, Totem, e cosa é stato fatto e la relativa telemetria, l'Atlas
+    - Conversando con un agente in fase di onboarding per delfinirne il contenuto, l'utente crea il suo Totem Guida
+    - Flessibile, in quanto non é una guida rigida di azioni da svolgere in una sequenza statica, ma piú una sequenza logica che, pur avendo una preferenza temporale per alcuni aspetti, se definita dall'utente, lascia comunque spazio a quella casualitá tipica dell'imprevedibilitá delle interazioni umane che potrebbe emergere eventualmente tra una "Tappa" ed un'altra. L'obiettivo non é guidare le interazioni a scorrere attraverso un percorso rigido, ma gestirle flessibilmente virando verso specifiche tappe, accettando che alcune di esse potrebbero essere saltate totalmente dal lead per non essere mai piú rivisitate, o possono essere rivisitate ma in ordine casuale, oppure possano esserci casi in cui si rispettano piú parti del Totem raggiungendo una quasi totalitá dell'insieme degli obbiettivi in un solo passaggio, e tutto questo deve essere riflettuto nella memoria contenuta nell'Atlas Memoriale riguardo suddetto lead.
+# Ricerca Forense
+## Filtro di coerenza incrociata
+    - Scoring di pertinenza dei dati: Per poter accettare un nuovo dato da collegare nel Profiling del lead, esso fará parte di una partizione di dati che presenta altri elementi che comparati con i dati presenti nel Profilo, presentano un alto tasso di similaritá
+      - Esempio: 
+         Se cerco "Mario Rossi Roma Termini pizzeria 'La delizia'" i dati base sono:
+         A. Mario
+         B. Rossi
+         C. Roma
+         D. Termini
+         E. pizzeria
+         F. 'la Delizia'
+         Questi dati sono "Joinati" tra loro nella forma presente nel nostro db nelle parti seguenti:
+         P1. Mario Rossi
+         P2. Roma Termini
+         P3. pizzeria
+         P4. 'La delizia'
+         Le parti appena citate sono quelle presenti sotto alle colonne presenti nel db, chiamate "Nome Completo" (Mario Rossi), "Indirizzo"(genericamente Roma Termini), "attivitá/business type" (pizzeria), "Business Name" ('La delizia'). Queste parti peró possono essere unite ancora tra loro per formare tutte le parti che portano all'ordine totale delle parti, entrando tutte cosí a far parte di un diagramma Hasse che presenta le seguenti altre parti aggiuntive:
+         P5. Mario Rossi Roma Termini
+         P6. Roma Termini pizzeria
+         P7. pizzeria 'La delizia'
+         P8. Mario Rossi pizzeria
+         P9. Roma Termini pizzeria 'La delizia'
+         P10. Mario Rossi Roma Termini pizzeria
+         P11. Mario Rossi Roma Termini pizzeria 'La delizia'
+         In base a quante di queste parti contenute giá nel DB si identificano nella fonte dei nuovi dati trovati * x (numero arbitrario per poter semplificare il calcolo, potrebbe essere 11 o altro)
+
+# Oggetto Terminale
+# Profiling del lead
+## Incrocio dei dati lead coi dati prodotto
+    - Collegamento dei dati certi sul lead con quelli che si hanno sul prodotto
+    - Utilizzo di Graphiti per poter scrivere i diversi "livelli" come "episodi", cosí come li definisce Graphiti stesso, di un diagramma Hasse che tende verso l'integrazione appunto dei dati in un grafo
+# Casella Mail utilizzata
+## Gmail
+    - Gmail permette di usare un dominio personalizzato senza pagare Google workspace?
+      - Il dominio personalizzato di Google porta vantaggi sia rispetto al normale utilizzo di una mail associata a un dominio classico che di una casella @gmail.com standard?
+# Orari Personalizzati per Outreach
+## Permettere all'user di poter scegliere
+    - Dare la possibilitá di poter impostare liberamente, il valore che  viene preso dal nodo Stage Controller che controlla se l'esecuzione corrente é avvenuta entro 3 minuti da quell'orario per poter avviare la phase 1 di ricerca forense e primo Outreach per i lead pronti nel foglio di controllo.
