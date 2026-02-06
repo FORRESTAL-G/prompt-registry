@@ -103,4 +103,3 @@ Solo dopo che il Boss ha confermato la configurazione finale:
 # Summarizer del Totem Guide Agent
 Anche il Totem Guide Agent dovrebbe comprendere il suo personale agente di summarizzazione
 
-# 
