@@ -36,12 +36,18 @@
          Assegneremo un punteggio di congruenza ai dati presenti all'interno di una qualsiasi fonte risultata dalle ricerche, in base a quale di queste parti contenute giá nel DB si identificano nella fonte dei nuovi dati trovati, dando piú valore alle parti che si trovano piú in alto nel diagramma di Hasse che rappresenta il lead. Ergo, piú congruenza abbiamo, seguendo la lista di parti nominate in precedenza potremmo dire che P1 ≤ P5 ≤ P11 ≤ P12, e piú sará alto il valore finale del punteggio di congruenza stesso assegnato ai dati aggiuntivi associati al risultato di ricerca che contiene suddetti dati insieme a quello che vengono comparati con il DB per assegnare il punteggio stesso. 
          Perció si rappresenta prima di tutto il lead come diagramma Hasse, per poter stabilire la gerarchia delle associazioni dei termini di ricerca. Una volta che si ottengono risultati di ricerca, essi vanno analizzati per poter dare voti di congruenza alla fonte del dato stesso, con il solo scopo qui, NON di giudicare la veridicitá del dato quanto che esso faccia riferimento alla persona di cui stiamo cercando ulteriori dettagli. Se si stesse cercando di trovare dati su un personaggio di nome Mario Rossi che é un CEO, e si trovasse notizie sul pizzaiolo di Roma Termini, bisognerebbe dare un voto bassissimo data la scarsa congruenza
 
-         Il calcolo: Qui ho bisogno
+         Il calcolo: 
+            P12 ha 4 delle 4 voci possibili da trovare insieme che provengono dal profiling fatto tramite i nostri dati del database, 
+            P1 ha una sola delle 4 possibili voci che si possono avere, quindi P1 ≤ P12.
+            Il calcolo deve tendere al 100%, tale che 100 equivale al punteggio assegnato alla presenza nella fonte presa in esame di una parte di dati contenente tutte le possibili combinazioni--e si ottiene un punteggio inferiore qualora si ricade in una parte in cui sono presenti un minor numero di combinazioni di dati dal profilo dato per rassodato--e, laddove il punteggio di congruenza é alto si aggiunge i nuovi dati tra quelli presenti giá nel profilo.
 # Oggetto Terminale
+## Il Supervisionatore, o anche detto "Sovrintendente"
+    In ultima istanza, per evitare allucinazioni a tutti i costi bisogna far passare per la convalida di un supervisionatore centrale tutte le operazioni complesse che il sistema esegue, come ad esempio l'unione di un nuovo dato con il profilo del lead, o la stesura di una email sulla base delle informazioni di un lead e le informazioni sul prodotto da vendere a nome dell'utente che usa il sistema, come anche la "forma" con cui salvare un ricordo nell'Atlas in base a come l'interazione é avvenuta--potendo richiedere una revisione e una ristesura del ricordo stesso a chi sta cercando di scriverlo, in base a quanto l'aggente é soddisfatto della sua forma--per poter permettere l'immagazzinamento di informazioni a lungo termina in una struttura compatta e ben organizzata
 # Profiling del lead
 ## Incrocio dei dati lead coi dati prodotto
-    - Collegamento dei dati certi sul lead con quelli che si hanno sul prodotto
-    - Utilizzo di Graphiti per poter scrivere i diversi "livelli" come "episodi", cosí come li definisce Graphiti stesso, di un diagramma Hasse che tende verso l'integrazione appunto dei dati in un grafo
+    - Collegamento dei dati certi sul lead--presenti nel Profilo del lead--con quelli che si hanno sul prodotto
+    - Utilizzo di Graphiti per poter scrivere i diversi "livelli" come "episodi" (come li definisce Graphiti stesso) di un diagramma Hasse che tende verso l'integrazione totale dei dati in un grafo diviso per livelli di gerarchi dove i livelli sono gli episodi, e si ragione quadridimensionalmente non guardando gli episodi come solo metadati ma come parte stessa della struttura del grafo risultante.
+        (Non ero sicuro che Graphiti fosse la scelta giusta, anzi, forse ci sono scelte piú adatte, ma facendo riferimento ai dati che avevo nel cervello in quel momento mi sembrava che fosse un'opzione)
 # Casella Mail utilizzata
 ## Gmail
     - Gmail permette di usare un dominio personalizzato senza pagare Google workspace?
