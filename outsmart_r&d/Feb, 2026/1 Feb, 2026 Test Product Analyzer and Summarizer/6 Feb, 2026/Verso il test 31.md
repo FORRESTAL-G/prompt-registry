@@ -1,6 +1,6 @@
 Per riprendere il lavoro di ieri analizzo cosa é andato storto nell'esecuzione | ID#5842 |
 
-# Escape dei caratteri, newline fuori dagli item dell'array JSON e correzione automatica tramite regex
+# Escape dei caratteri, newline fuori dagli item dell'array JSON e correzione automatica tramite regex (FATTO)
 
     Una cosa che mi é subito venuta in mente di aggiungere nell'espressione che pesca il messaggio di output dal nodo che a sua volta lo prende dagli agenti, e lo manda a Telegram nel campo text message, é un controllo e rimozione eventuale di caratteri di escape o newline inseriti erroneamente dall'AI al di fuori dell'item json, ed in posizioni che potrebbero rompere la struttura. 
     
@@ -8,14 +8,18 @@ Per esempio:
 {
  \n   "message": ["messaggio 1",\n "messaggio 2"\n]\n
 }
+    Istruito l'agente per evitare il comportamento lui stesso a priori
 
 o anche, per il caso dell'escape:
 {
     "message": ["\messaggio 1"\, "\messaggio 2"\]
 }
+    Istruito l'agente per evitare il comportamento lui stesso a priori
+
 Che tra l'altro non dovrebbe servire se non erro quando il nodo Telegram é impostato in PARSE MODE HTML.
 
-# Tag consentiti e tag banditi
+
+# Tag consentiti e tag banditi (FATTO)
 
     Devo vietare in modo piú incisivo quali tag non voglio che l'agente usi, perché é evidente che non stia ascoltando.
 
@@ -100,6 +104,6 @@ Solo dopo che il Boss ha confermato la configurazione finale:
         IMPORTANTE: Non Escapare caratteri che si escapano nel markdown, qui siamo in parse mode HTML, NON MARKDOWN.
 ````
 
-# Summarizer del Totem Guide Agent
-Anche il Totem Guide Agent dovrebbe comprendere il suo personale agente di summarizzazione
+# Summarizer del Totem Guide Agent (ANCORA DA FARE)
+Anche il Totem Guide Agent dovrebbe comprendere il suo personale agente di summarizzazione, ma per realizzarlo visto che esso dovrá lavorare sulla struttura dati, serve definire la struttura, ergo, prima devo portare avanti il discorso dell'arricchimento, il profiling del lead e definire piú approfonditamente il Totem Guida in se per se; una volta definito esso potremmo realizzare il summarizer
 
